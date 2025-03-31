@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0f0f0f;
+            color: #eee;
+            margin: 0;
+            padding: 20px;
+            display: block;
+            min-height: 100vh;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                background-color: #0f0f0f;
+            }
+            100% {
+                background-color: #1a1a1a;
+            }
+        }
+
+        .container {
+            max-width: 1500px;
+            background: #1e1e1e;
+            padding: 30px;
+            margin: 0 auto;
+            animation: shake 0.5s ease-in-out infinite alternate;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f80303, #ff4b2b);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.6);
+        }
+
+        h2 {
+            color: #ffffff;
+            border-bottom: 3px solid #ff4b2b;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .status-item {
+            background: #2a2a2a;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: left;
+            animation: pulseStatus 1.5s infinite alternate;
+        }
+
+        @keyframes pulseStatus {
+            0% {
+                background: #2a2a2a;
+            }
+            100% {
+                background: #3a3a3a;
+            }
+        }
+
+        .status-item p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .status-item span {
+            font-weight: bold;
+            color: #ff4b2b;
+            text-transform: uppercase;
+        }
+
+        .alert {
+            background: #ff4b2b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 25px;
+            display: none; /* Initially hidden */
+            animation: flashAlert 1.5s infinite alternate;
+        }
+
+        @keyframes flashAlert {
+            0% {
+                background: #ff4b2b;
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+            }
+            100% {
+                background: #ff1a1a;
+                box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+            }
+        }
+
+        .alert h3 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .alert p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Button Style */
+        .toggle-button {
+            background: transparent;
+            border: none;
+            color: #ff4b2b;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-up {
+            transform: rotate(180deg); /* Pointing up */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Security Report</h1>
+        </header>
+        <section>
+            <h2>Security Status</h2>
+            <div class="status-item">
+                <p><span>Internet Status:</span> UNSAFE AND UNPROTECTED</p>
+            </div>
+            <div class="status-item">
+                <p><span>IP Address:</span> 250.55.166.218 (PUBLIC AND EXPOSED)</p>
+            </div>
+            <div class="status-item">
+                <p><span>Windows Defender Protection:</span> DISABLED</p>
+            </div>
+            <div class="status-item">
+                <p><span>End-to-End Encryption:</span> DISABLED</p>
+            </div>
+            <div class="status-item">
+                <p><span>Kernel DMA Protection:</span> DISABLED</p>
+            </div>
+
+            <!-- Button to show/hide alert -->
+            <button class="toggle-button" id="toggleButton">
+                Show Details
+                <span class="arrow" id="arrow">&#8595;</span> <!-- Down Arrow -->
+            </button>
+
+            <div class="alert" id="alertSection">
+                <h3>Infection Detected!</h3>
+                <p><span>Server Connected:</span> Beijing, China (IP: 218.107.132.68)</p>
+                <p><span>Server Connected:</span> Moscow, Russia (IP: 46.17.46.274)</p>
+                <p><span>Server Connected:</span> United States (IP: 170.171.1.0)</p>
+                <p><span>Server Connected:</span> Hong Kong (IP: 1.118.255.255)</p>
+                <p><span>Compromised Data:</span> Browsing History, Personal Details (Card Information, SSN, Location)</p>
+                <p><span>Password Compromise:</span> 62 passwords found</p>
+                <p><span>Device Compromise:</span> Phones, Computer, Router (Modem/Demodulator)</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript to toggle the alert and arrow direction
+        const toggleButton = document.getElementById('toggleButton');
+        const alertSection = document.getElementById('alertSection');
+        const arrow = document.getElementById('arrow');
+
+        toggleButton.addEventListener('click', () => {
+            // Toggle visibility of the alert section
+            alertSection.style.display = alertSection.style.display === 'none' || alertSection.style.display === '' ? 'block' : 'none';
+            
+            // Toggle arrow direction
+            arrow.classList.toggle('arrow-up');
+        });
+    </script>
+</body>
+</html>
