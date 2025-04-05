@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Status</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            color: #333;
+            margin: 0;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Card styles for the info boxes */
+        .info-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h3 {
+            color: #444;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        /* Color classes for different status types */
+        .safe {
+            color: #4CAF50;
+        }
+
+        .enabled {
+            color: #4CAF50;
+        }
+
+        .warning {
+            color: #FF9800;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .info-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Security Check for IP Address</h1>
+
+    <div class="info-box">
+        <h3>IP Address Status:</h3>
+        <p class="status safe">Your IP address <strong>250.55.166.218</strong> is <strong>safe and secure</strong>.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>DMA and Kernel DMA Protection Status:</h3>
+        <p class="status enabled">Waredot Internet Protection: <strong>Enabled</strong></p>
+        <p class="status enabled">Waredot Device Protection: <strong>Enabled</strong></p>
+        <p class="status enabled">End-to-End Encryption: <strong>Enabled</strong></p>
+        <p class="status enabled">DMA Protection: <strong>Enabled</strong></p>
+        <p class="status enabled">Kernel DMA Protection: <strong>Enabled</strong></p>
+    </div>
+
+</body>
+</html>
